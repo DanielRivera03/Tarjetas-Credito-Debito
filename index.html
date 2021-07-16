@@ -1,0 +1,78 @@
+<!--
+
+/*
+--------------------------------------------------
+
+  GENERADOR DE TARJETAS DE CREDITO / DEBITO
+
+--------------------------------------------------
+-> La base utilizada es el formato de tarjetas
+  AMEX / AMERICAN EXPRESS.
+
+-> Puede ser cambiado según las necesidades 
+
+-> Autor: Daniel Rivera 
+-> Github: https://github.com/DanielRivera03
+                © 2021
+
+--------------------------------------------------
+  GRACIAS POR DESCARGAR ESTE PROYECTO :) ♥️
+--------------------------------------------------
+*/
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/estilos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+  <title>..:: Generador de Tarjetas ..::</title>
+</head>
+<body>
+<div class="contenedor">
+  <button type="submit" onclick="javascript:window.print()"><img src="img/printer_78349.png"> Imprimir</button>
+  <!-- DATOS DE TARJETA -> VISTA AL CLIENTE / USUARIO FINAL -->
+  <div class="tarjeta" id="tarjeta">
+    <h1 class="titulo">AMERICAN EXPRESS</h1>
+    <div class="copyright">&copy; AMEX</div>
+    <div class="chip"><img src="img/chip.png" alt="chip"></div>
+    <div class="lineas"><img src="img/707566.png" alt="Lineas"></div>
+    <div class="logo-tarjeta"><img src="img/american-express-transparent.png" alt="American Express"></div>
+    <p class="numeros" id="numeros">3759 876543 21001</p>
+    <p class="nombre" id="nombre">LOREM IPSUM DOLOR</p>
+    <p class="miembro" id="miembro">Member Since</p>
+    <p class="desde" id="desde">21</p>
+    <p class="codigo" id="codigo">7899</p>
+  </div>
+  <h1 class="titulo-declaracion">Importante:</h1>
+  <p class="declaracion">* Nunca revel&eacute; sus datos confidenciales de est&aacute; tarjeta
+    <br>* Por favor si necesita asistencia <span style="color: #F00;"> comun&iacute;quese con su
+    asesor comercial m&aacute;s cercano</span><br>* La clave secreta de su tarjeta es: 
+    <script>var Minimo=1000; var Maximo=9999; var Clave =Math.floor(Math.random() * (+Maximo - +Minimo)) + +Minimo;document.write(Clave);</script><br><span style="color: #F00;">* Si la clave secreta no ha sido generada, por favor genera la petici&oacute;n nuevamente</span><br>* Por su seguridad, al momento de recibir este comprobante, destruyalo conservando las buenas pr&aacute;ticas que conserven nuestro medio ambiente.</p>
+      <h1 class="titulo-declaracion">Es un placer atenderte </h1>
+  <!-- Bloque datos de tarjetahabiente -->
+  <div class="datos-tarjeta">
+    <form class="datoscliente" id="datoscliente" action="">
+      <!-- Nombre -->
+      <label for="nombrecliente">Nombre del Cliente:</label>
+      <input type="text" onkeyup="javascript:this.value=this.value.toUpperCase();" name="nombrecliente" id="nombrecliente"  maxlength="25" autocomplete="off">
+      <!-- Numero -->
+      <label for="numerocliente">N&uacute;mero de Tarjeta:</label>
+      <input type="text" name="numerocliente" id="numerocliente" maxlength="15" autocomplete="off">
+      <!-- Codigo Seguridad -->
+      <label for="codigocliente">CCV:</label>
+      <input type="text" name="codigocliente" id="codigocliente"  maxlength="4" autocomplete="off">
+      <!-- Miembro desde -->
+      <label for="miembroclientes">Miembro desde:</label>
+      <input type="text" name="miembrocliente" id="miembrocliente"  maxlength="2" autocomplete="off">
+    </form>
+  </div>
+</div>
+<script src="js/controlador.js"></script>
+</body>
+</html>

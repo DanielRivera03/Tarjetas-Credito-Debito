@@ -1,0 +1,293 @@
+
+/*
+--------------------------------------------------
+
+  GENERADOR DE TARJETAS DE CREDITO / DEBITO
+
+--------------------------------------------------
+-> La base utilizada es el formato de tarjetas
+  AMEX / AMERICAN EXPRESS.
+
+-> Puede ser cambiado según las necesidades 
+
+-> Autor: Daniel Rivera 
+-> Github: https://github.com/DanielRivera03
+                © 2021
+
+--------------------------------------------------
+  GRACIAS POR DESCARGAR ESTE PROYECTO :) ♥️
+--------------------------------------------------
+*/
+
+
+/*FUENTE PERSONALIZADA -> POR DEFECTO AMERICAN EXPRESS*/
+@font-face {
+  font-family: 'SF-Fourche-Bold';
+  src:url('../font/SF-Fourche-Bold.ttf.woff') format('woff'),
+  url('../font/SF-Fourche-Bold.ttf.svg#SF-Fourche-Bold') format('svg'),
+  url('../font/SF-Fourche-Bold.ttf.eot'),
+  url('../font/SF-Fourche-Bold.ttf.eot?#iefix') format('embedded-opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body{
+  background: url("../img/fondo.jpg");
+  background-size: cover;
+}
+
+/*CONTENEDOR PRINCIPAL*/
+.contenedor {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-40%, -40%);
+}
+
+/*CUERPO DE LA TARJETA EN CUESTION*/
+.tarjeta {
+  position: relative;
+  width: 650px;
+  height: 350px;
+  border-radius: 25px;
+  background: url("../img/wallpaper.jpg");
+  background-size: cover;
+  backdrop-filter: blur(30px);
+  border: 12px solid #dfe6e9;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* ICONO CHIP DE TARJETA */
+.chip img {
+  top: 120px;
+  left: 40px;
+  width: 50px;
+  height: auto;
+  opacity: 0.8;
+}
+
+/* SETEO DE CONTENEDORES SECUNDARIOS -> CUERPO DE TARJETA */
+.copyright,
+.numeros,
+.chip img,
+.nombre,
+.miembro,
+.desde,
+.lineas,
+.codigo {
+  position: absolute;
+}
+
+/* COPYRIGHT -> MARCA REGISTRADA */
+.copyright {
+  top: 325px;
+  right: 190px;
+  font-family: 'SF-Fourche-Bold';
+  font-size: .7rem;
+  color: #dfe6e9;
+}
+
+/* LOGO PRINCIPAL DE TARJETA -> BANCO EMISOR U OTRA CARACTERISTICA */
+.logo-tarjeta img{
+  margin: auto;
+  width: 160px;
+  height: auto;
+  opacity: .6;
+  display: block;
+}
+
+/* LINEAS SOBRE CODIGO DE SEGURIDAD */
+
+.lineas{
+  bottom: 180px;
+  right: 110px;
+}
+
+.lineas img{
+  width: 40px;
+  height: auto;
+}
+
+/* TITULO DE TARJETA -> MARCA O BANCO EMISOR */
+
+.titulo{
+  text-align: center;
+  font-family: 'SF-Fourche-Bold';
+  letter-spacing: 5px;
+  color: #dfe6e9;
+}
+
+/* CHIP DE TARJETA  */
+.chip img {
+  top: 120px;
+  left: 40px;
+  width: 70px;
+  height: auto;
+  opacity: 0.8;
+}
+
+/* ESTILOS TEXTO TARJETAHABIENTE -> CLIENTE FINAL  */
+.nombre,
+.desde {
+  font-family: 'SF-Fourche-Bold';
+  color: #dfe6e9;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+}
+
+.numeros {
+  left: 90px;
+  bottom: 95px;
+  font-family: 'SF-Fourche-Bold';
+  font-size: 1.9rem;
+  letter-spacing: 8px;
+  color: #dfe6e9;
+  text-shadow: 2px 2px 0px rgba(150, 150, 150, 1);
+}
+
+.nombre {
+  font-size: 1.3rem;
+  left: 40px;
+  bottom: 20px;
+}
+
+.desde {
+  font-size: 1.4rem;
+  bottom: 30px;
+  right: 110px;
+}
+
+.codigo{
+  color: #dfe6e9;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  bottom: 170px;
+  right: 60px;
+}
+
+.miembro{
+  font-size: 0.8rem;
+  bottom: 65px;
+  right: 100px;
+  font-family: 'SF-Fourche-Bold';
+  color: #dfe6e9;
+  font-weight: 400;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+}
+
+/* CONTENEDOR DE INGRESO DE DATOS */
+
+.datos-tarjeta{
+  position: absolute;
+  top: 50%;
+  left: 130%;
+  transform: translate(-40%, -40%);
+  padding: 1rem;
+  margin: .7rem auto;
+  width: 60%;
+  height: auto;
+  border: 10px solid #dfe6e9;
+  border-radius: 25px;
+  background: #8989ba;
+  background: -moz-linear-gradient(top,  #8989ba 0%, #8989ba 100%);
+  background: -webkit-linear-gradient(top,  #8989ba 0%,#8989ba 100%); 
+  background: linear-gradient(to bottom,  #8989ba 0%,#8989ba 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8989ba', endColorstr='#8989ba',GradientType=0 );
+}
+
+.datos-tarjeta > .datos-cliente{
+  width: 100%;
+}
+
+/*  CAMPOS DE TEXTO A INGRESAR DATOS */
+#nombrecliente,
+#numerocliente,
+#codigocliente,
+#miembrocliente{
+  width: 100%;
+  height: 30px;
+  font-family: 'SF-Fourche-Bold';
+  color: #000;
+}
+
+form > label{
+  font-size: .9rem;
+  font-family: 'SF-Fourche-Bold';
+  color: #000;
+}
+
+form > input[type="text"]{
+  border-radius: 10px;
+  outline: none;
+  border: 0;
+  border-bottom: 4px solid #000;
+}
+
+button[type="submit"]{
+  position: absolute;
+  margin: auto;
+  top: 10%;
+  left: 130%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .9rem;
+  background: #a90329; 
+  background: -moz-linear-gradient(top,  #a90329 0%, #8f0222 44%, #6d0019 100%);
+  background: -webkit-linear-gradient(top,  #a90329 0%,#8f0222 44%,#6d0019 100%); 
+  background: linear-gradient(to bottom,  #a90329 0%,#8f0222 44%,#6d0019 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 );
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+
+button[type="submit"]:hover{
+  opacity: .7;
+}
+
+button[type="submit"] > img{
+  width: 10px;
+  height: 10px;
+}
+
+.declaracion,
+.titulo-declaracion{
+  display: none;
+}
+
+/* ESTILOS SOLO PARA IMPRESION */
+@media print{
+  .datos-tarjeta{
+    display: none;
+  }
+
+  .contenedor {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-40%, -40%);
+  }
+
+  .tarjeta{
+    border: 10px solid #b2bec3;
+    -webkit-print-color-adjust: exact;
+     color-adjust: exact;
+  }
+
+  .declaracion{
+    padding: 1rem;
+    border: 1px dashed #b2bec3;
+    display: block;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
+    font-size: 1rem;
+  }
+
+  .titulo-declaracion{
+    display: block;
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+  }
+}
