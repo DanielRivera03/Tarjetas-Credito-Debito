@@ -18,7 +18,7 @@
 --------------------------------------------------
 
 
-
+*******************************************************************************
 *******************************************************************************
 >>> NUEVA ACTUALIZACION <<<
 -> VALIDACION DE INPUT INGRESO DE DATOS
@@ -26,6 +26,8 @@
 -> MENSAJES DE ALERTAS PERSONALIZADAS
 -> BLOQUEO TOTAL DE CARACTERES NO SOLICITADOS
 *******************************************************************************
+*******************************************************************************
+
 
 */
 
@@ -70,6 +72,10 @@ function ValidarTarjeta(){
 	}else{
 		// SI CUMPLE CON TODOS LOS REQUISITOS -> IMPRIMIR COMPROBANTE
 		window.print();
+		/*
+			-> AL EJECUTAR ESTA PETICION, SE TOMAN AUTOMATICAMENTE LAS REGLAS DE
+			ESTILOS DEDICADAS EXCLUSIVAMENTE A LA IMPRESION DE COMPROBANTES
+		*/
 	}
 }
 
@@ -105,6 +111,12 @@ function ValidarCodigoTarjetaUnico(valorcodigo){
 /*
 	--> CONTROLADOR DINAMICO
 			DATOS GENERALES DE TARJETA {TODOS LOS DATOS}
+
+
+			IMPORTANTE:
+
+			LA VARIABLE << ValorPeticion >> ES LA QUE CONTROLA TODOS LOS DATOS
+			DINAMICOS INGRESADOS POR LOS USUARIOS EN EL FORMULARIO
 */
 
 // NOMBRE DINAMICO TARJETAHABIENTE
@@ -121,12 +133,13 @@ IngresoDatos.nombrecliente.addEventListener('keyup', (e) => {
 IngresoDatos.numerocliente.addEventListener('keyup', (e) => {
 	let ValorPeticion = e.target.value;
 	IngresoDatos.numerocliente.value = ValorPeticion
+	// NO ACEPTAR CARACTERES NO SOLICITADOS
 	.replace(/\s/g, '')
 	.replace(/\D/g, '')
 	.replace(/([0-9]{4})/g,'$1 ',)
+	// LIMPIEZA
 	.trim();
 	NumeroUnicoTarjeta.textContent = ValorPeticion;
-
 	if(ValorPeticion == ''){
 		NumeroUnicoTarjeta.textContent = '3759 876543 2100';
 	}	
@@ -135,6 +148,7 @@ IngresoDatos.numerocliente.addEventListener('keyup', (e) => {
 // CODIGO DE SEGURIDAD TARJETAHABIENTE
 IngresoDatos.codigocliente.addEventListener('keyup', () => {
 	IngresoDatos.codigocliente.value = IngresoDatos.codigocliente.value
+	// NO ACEPTAR CARACTERES NO SOLICITADOS
 	.replace(/\s/g, '')
 	.replace(/\D/g, '');
 	CodigoSeguridad.textContent = IngresoDatos.codigocliente.value;
@@ -143,6 +157,7 @@ IngresoDatos.codigocliente.addEventListener('keyup', () => {
 // MIEMBRO DESDE {AÑO} TARJETAHABIENTE
 IngresoDatos.miembrocliente.addEventListener('keyup', () => {
 	IngresoDatos.miembrocliente.value = IngresoDatos.miembrocliente.value
+	// NO ACEPTAR CARACTERES NO SOLICITADOS
 	.replace(/\s/g, '')
 	.replace(/\D/g, '');
 	desde.textContent = IngresoDatos.miembrocliente.value;
@@ -153,6 +168,8 @@ IngresoDatos.miembrocliente.addEventListener('keyup', () => {
 });
 
 // FUNCION PARA MOSTRAR ALERTAS A USUARIOS
+// FUENTE SEGUN LO APLICADO DENTRO DEL BODY DE ESTE PROYECTO, O BIEN
+// PUEDE SER CAMBIADO SI ASI SE DESEA
 function AlertaUsuarioMostrar(titulo, descripcion, icono) {
     Swal.fire(
         titulo, // ENCABEZADO 
