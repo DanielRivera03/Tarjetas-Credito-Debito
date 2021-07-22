@@ -35,6 +35,7 @@
 body{
   background: url("../img/fondo.jpg");
   background-size: cover;
+  font-family: 'SF-Fourche-Bold';
 }
 
 /*CONTENEDOR PRINCIPAL*/
@@ -228,8 +229,8 @@ form > input[type="text"]{
 button[type="submit"]{
   position: absolute;
   margin: auto;
-  top: 10%;
-  left: 130%;
+  top: -23%;
+  left: 40%;
   font-family: 'Montserrat', sans-serif;
   font-size: .9rem;
   background: #a90329; 
