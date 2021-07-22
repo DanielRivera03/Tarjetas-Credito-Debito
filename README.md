@@ -8,6 +8,9 @@
 
 <h3>¿Deseas ver la demo? https://danielrivera03.github.io/Tarjetas-Credito-Debito/</h3>
 
+<h3>Extras (Nueva Actualización)</h3>
+<p>Se realizaron adecuaciones en los archivos <b>html, css y javascript</b>. Esto con el fin de agregar validaciones al formulario previo a la impresión del comprobante, mensajes de alertas personalizadas y bloqueo total de caracteres no solicitados. <b>Además de generar el código de seguridad (CCV) automáticamente con solo digitar un dígito cualquiera, no es necesario que ahora lo ingreses manualmente.</b></p>
+
 
 <h3>Capturas</h3>
 
@@ -31,7 +34,7 @@
 ![bannerfinal](https://user-images.githubusercontent.com/44457989/125893452-929bac86-f67b-4d8a-8c66-77f3c94108d7.jpg)
 
 
-<h3>** Fecha de Subida: 15 de Julio 2021 **</h3>
+<h3>** Fecha de Subida: 15 de Julio 2021 - Última Modificación: 21 de Julio 2021**</h3>
 
 
 
