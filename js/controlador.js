@@ -162,8 +162,8 @@ IngresoDatos.miembrocliente.addEventListener('keyup', () => {
 	.replace(/\D/g, '');
 	desde.textContent = IngresoDatos.miembrocliente.value;
 	// COMPROBAR AÑO DE ASOCIACION
-	if(desde.textContent>21){
-		desde.textContent = 21; // MODIFICAR SEGUN AÑO EN CUESTION
+	if(desde.textContent>22){
+		desde.textContent = 22; // MODIFICAR SEGUN AÑO EN CUESTION
 	}
 });
 
